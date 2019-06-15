@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Confirm Googlebot - Reverse DNS Lookup | SearchTools.io</title>
+        <meta name="robots" content="noindex">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="./style.css" type="text/css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./script.js" defer></script>
+        <link rel="shortcut icon" href="./images/favicon.png" />
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+            <img src="./images/white-logo.png" alt="SearchTools.io">
+            </div>
+        </header>
+        <section class="main">
+                <div class="content-area">
+                    <section class="heading">
+                        <h1>Googlebot Confirmation Tool</h1>
+                    </section>
+                    <div class="input-area" id="input-area">
+                        <h2>Enter IP Addresses</h2>
+                        <div class="directions">Conduct a reverse DNS lookup on up to 25 ip addresses to determine if they are Googlebot.
+                        </div>
+                        <textarea class="ip-input-area" id="ip-input"></textarea>
+                        <div class="go-button">
+                            <button onclick="run()" id="qa-button" class="qa-button">Find Googlebots</button>
+                        </div>
+                    </div>
+                    <div class="spinner-area">
+                        <div class="loading-spinner" id="loading-spinner" style="display:none"></div>
+                        <p id="error-message" style="display:none;color:red;">Error: You must enter at least one ip address</p>
+                    </div>
+                    <div id="results-area" style="display:none">
+                        <h2>Results</h2>
+                        <div class="result-message">The following IP Addresses have been confirmed to be Googlebot:
+                        </div>
+                        <p id="results"></p>
+                    </div>
+                    <div id="fake-bots" style="display:none">
+                        <div class="result-message">
+                            The following IP Addresses <span class="red">could not</span> be confirmed to be Googlebot:
+                    </div>
+                    <p id="not-googlebots"></p>
+                </div>
+                
+                
+
+        </section>
+
+        
+        
+
+    </body>
+</html>
+
