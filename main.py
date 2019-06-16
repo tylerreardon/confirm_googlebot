@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Resource, Api
 from flask_cors import CORS
 import confirm_googlebot
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 api = Api(app)
 CORS(app)
 
@@ -19,8 +19,9 @@ api.add_resource(googlebotChecker, '/confirm_googlebot/<ip_list>')
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World'
+def home():
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=80)

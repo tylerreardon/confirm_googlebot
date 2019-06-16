@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Confirm Googlebot - Reverse DNS Lookup Tool | SearchTools.io</title>
+        <meta name="description" content="The Googlebot Confirmation Tool allows you to enter a list of IP addresses from your log files and determine whether or not they are actually Googlebot.">
+        <link rel="canonical" href="http://www.searchtools.io"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="/style.css" type="text/css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/script.js" defer></script>
+        <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142189276-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142189276-1');
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+            <a href="www.searchtools.io"><img src="/images/logo-white.png" alt="SearchTools.io"></a>
+            </div>
+        </header>
+        <section class="main">
+                <div class="content-area">
+                    <section class="heading">
+                        <h1>Googlebot Confirmation Tool</h1>
+                    </section>
+                    <div class="input-area" id="input-area">
+                        <div class="directions">Enter a list of IP addresses to confirm whether each IP is Googlebot based on a reverse DNS lookup.
+                        </div>
+                        <textarea class="ip-input-area" id="ip-input" placeholder="Enter up to 25 IP addresses here"></textarea>
+                        <div class="go-button">
+                            <button onclick="run();" id="qa-button" class="qa-button">Find Googlebots</button>
+                        </div>
+                    </div>
+                    <div id="results-area" style="display:none">
+                        <h2 class="results-heading">Results</h2>
+                        <div class="result-message">The following IP Addresses have been confirmed to be Googlebot:
+                        </div>
+                        <p id="results"></p>
+                    </div>
+                    <div id="fake-bots" style="display:none">
+                        <div class="result-message">
+                            The following IP Addresses <span class="red">could not</span> be confirmed to be Googlebot:
+                    </div>
+                    <p id="not-googlebots"></p>
+                </div>
+                <div class="spinner-area">
+                    <div class="loading-spinner" id="loading-spinner" style="display:none"></div>
+                    <p id="error-message" style="display:none;color:red;">Error: You must enter at least one ip address</p>
+                </div>
+                <div class="line">
+                <hr class="faq-line"/>
+                </div>
+                <div class="faq">
+                    <h2 class="faq-heading">How do you verify an IP address is Googlebot?</h2>
+                    <p>We follow the instructions specified by Google in <a href="https://support.google.com/webmasters/answer/80553?hl=en" target="_blank">this post.</a> The steps are as follows:</p>
+                    <ol>
+                        <li>Run a reverse DNS lookup on the ip address provided.</li>
+                        <li>Verify that the domain name is a subdomain of either googlebot.com or google.com.</li>
+                        <li>Run a forward DNS lookup on the host name returned from step 1 and verify it matches the original ip address.</li>
+                    </ol>
+                        
+                </div>
+
+        </section>
+        <footer class="footer-distributed">
+
+                <div class="footer-left">
+    
+                    <img class="footer-logo" src="/images/searchtools-io.png"/>
+    
+                    
+    
+                    <p class="footer-company-name">SearchTools.io &copy; 2019</p>
+    
+                    
+                </div>
+    
+            </footer>
+    
+        
+
+    </body>
+</html>
+

@@ -58,6 +58,10 @@ function confirm_ips(ip_list){
     }
 }
 function run() {
+    gtag('event', 'run', {
+    'event_category': 'Submissions',
+    'event_label': 'Confirm Googlebot'
+    });
     let ip_list = '';
     let ip_count = 0;
     let data = {};
