@@ -210,3 +210,20 @@ textarea::placeholder {
     width: 50%;
   }
 }
+.runAgain{
+  display: none;
+}
+#run-more-button{
+  display: none;
+  width: 20%;
+  margin: 0 auto;
+}
+.user-agent{
+  margin-bottom: 10px;
+  font-family: monospace,monospace;
+  color: #71067f;
+  font-size: 14px;
+}
+.crawlers{
+  font-style: italic;
+}

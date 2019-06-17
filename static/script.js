@@ -36,6 +36,8 @@ function showResults(googlebots, not_googlebots) {
         document.getElementById('not-googlebots').innerHTML = not_googlebots.join('<br>');
         document.getElementById('fake-bots').style.display = 'block';
     }
+    document.getElementById('runAgain').style.display = 'block';
+    document.getElementById('run-more-button').style.display = 'block';
 }
 
 function confirm_ips(ip_list){
@@ -68,7 +70,6 @@ function run() {
     ip_list = document.getElementById('ip-input').value;
     ip_list = ip_list.split('\n');
     if (ip_list[0].length < 1){
-        document.getElementById('qa-button').style.display = 'none';
         document.getElementById('error-message').style.display = 'block';
     } else {
         showLoader();
@@ -76,7 +77,15 @@ function run() {
     }
 }
 
+function backToHome(){
+    document.getElementById('results-area').style.display = 'none';
+    document.getElementById("input-area").style.display = 'block';
+    document.getElementById('runAgain').style.display = 'none';
+    document.getElementById("run-more-button").style.display = 'none';
+}
+
 function showLoader(){
+    document.getElementById('error-message').style.display = 'none';
     document.getElementById('loading-spinner').style.display = 'block';
     document.getElementById("input-area").style.display = 'none';
     

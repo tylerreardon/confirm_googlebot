@@ -8,7 +8,7 @@
         <link href="/style.css" type="text/css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" defer></script>
         <script type="text/javascript" src="/script.js" defer></script>
         <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -24,7 +24,7 @@
     <body>
         <header>
             <div class="logo">
-            <a href="www.searchtools.io"><img src="/images/logo-white.png" alt="SearchTools.io"></a>
+            <a href="http://www.searchtools.io"><img src="/images/logo-white.png" alt="SearchTools.io"></a>
             </div>
         </header>
         <section class="main">
@@ -52,6 +52,9 @@
                     </div>
                     <p id="not-googlebots"></p>
                 </div>
+                <div class="run-again" id="runAgain">
+                    <button onclick="backToHome();" id="run-more-button" class="qa-button">Check More IPs</button>
+                </div>
                 <div class="spinner-area">
                     <div class="loading-spinner" id="loading-spinner" style="display:none"></div>
                     <p id="error-message" style="display:none;color:red;">Error: You must enter at least one ip address</p>
@@ -67,6 +70,12 @@
                         <li>Verify that the domain name is a subdomain of either googlebot.com or google.com.</li>
                         <li>Run a forward DNS lookup on the host name returned from step 1 and verify it matches the original ip address.</li>
                     </ol>
+                    <h2 class="faq-heading">Why is it important to verify Googlebot?</h2>
+                    <p>
+                        During log file analysis, a common mistake is to filter server log events by user-agent. For example, a common Googlebot mobile user-agent is:
+                         <div class="user-agent">Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)</div>
+                         However, when only analyzing logs by user-agent, it is easy to mistake other popular web crawlers <span class="crawlers">(such as ScreamingFrog, DeepCrawl, Botify, etc.)</span> with their user-agent set to Googlebot as actually being Googlebot. Therefore, the proper method should be to run each ip address with a Googlebot user-agent through this process and filter out any ip addresses that are not actually affiliated with Google.
+                    </p>
                         
                 </div>
 
