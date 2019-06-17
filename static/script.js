@@ -82,6 +82,7 @@ function backToHome(){
     document.getElementById("input-area").style.display = 'block';
     document.getElementById('runAgain').style.display = 'none';
     document.getElementById("run-more-button").style.display = 'none';
+    document.getElementById('fake-bots').style.display = 'none';
 }
 
 function showLoader(){
